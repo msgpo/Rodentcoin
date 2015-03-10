@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2013 Litecoin Developers
-// Copyright (c) 2013-2014 Phoenixcoin Developers
+// Copyright (c) 2013-2014 Rodentcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file LICENCE or http://www.opensource.org/licenses/mit-license.php
 
@@ -47,15 +47,15 @@ static const uint MAX_BLOCK_SIGOPS = (MAX_BLOCK_SIZE >> 6);
 static const uint MAX_ORPHAN_TRANSACTIONS = (MAX_BLOCK_SIZE >> 8);
 /* The current time frame of block limiter */
 static const int64 BLOCK_LIMITER_TIME = 120;
-// The min. transaction fee (0.1 PXC) if required
+// The min. transaction fee (0.1 RODENT) if required
 static const int64 MIN_TX_FEE = 10000000;
-// Fees below this value (0.05 PXC) are considered absent while relaying
+// Fees below this value (0.05 RODENT) are considered absent while relaying
 static const int64 MIN_RELAY_TX_FEE = 5000000;
-// The dust threshold (0.01 PXC)
+// The dust threshold (0.01 RODENT)
 static const int64 TX_DUST = 1000000;
 // The max. amount for a single transaction;
-// set to ~10% of the total coin supply in our case (10 million PXC)
-static const int64 MAX_MONEY = 10000000 * COIN;
+// set to ~10% of the total coin supply in our case (10 million RODENT)
+static const int64 MAX_MONEY = 239000000 * COIN;
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
@@ -587,7 +587,7 @@ public:
     static bool AllowFree(double dPriority)
     {
         // High priority transactions are exempt of mandatory fees usually
-        // Phoenixcoin: 960 blocks per day target, priority boundary is 1 PXC day / 250 bytes
+        // Rodentcoin: 960 blocks per day target, priority boundary is 1 RODENT day / 250 bytes
         return dPriority > COIN * 960 / 250;
     }
 

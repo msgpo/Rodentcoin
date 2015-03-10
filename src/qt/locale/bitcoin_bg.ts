@@ -33,7 +33,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="20"/>
-        <source>These are your Phoenixcoin addresses for receiving payments.  You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your Rodentcoin addresses for receiving payments.  You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation>Това са входящите адреси (за получаване на плащания).  За прегледност може да предоставяте различен адрес за всяко плащане.</translation>
     </message>
     <message>
@@ -407,7 +407,7 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="210"/>
-        <source>Send coins to a Phoenixcoin address</source>
+        <source>Send coins to a Rodentcoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1112,7 +1112,7 @@ Address: %4
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Phoenixcoin - RPC Console</source>
+        <source>Rodentcoin - RPC Console</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1220,7 +1220,7 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="212"/>
-        <source>Welcome to the Phoenixcoin RPC console.</source>
+        <source>Welcome to the Rodentcoin RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1993,12 +1993,12 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="50"/>
-        <source>Specify configuration file (default: phoenixcoin.conf)</source>
+        <source>Specify configuration file (default: rodentcoin.conf)</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="51"/>
-        <source>Specify pid file (default: phoenixcoind.pid)</source>
+        <source>Specify pid file (default: rodentcoind.pid)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2467,7 +2467,7 @@ SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <source>%s, you must set up the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=phoenixcoinrpc
+rpcuser=rodentcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 If the file does not exist, create it with owner-readable-only file permissions.

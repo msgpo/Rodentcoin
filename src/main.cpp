@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
-// Copyright (c) 2013-2014 Phoenixcoin Developers
+// Copyright (c) 2013-2014 Rodentcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file LICENCE or http://www.opensource.org/licenses/mit-license.php
 
@@ -58,7 +58,7 @@ map<uint256, map<uint256, CDataStream*> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Phoenixcoin Signed Message:\n";
+const string strMessageMagic = "Rodentcoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -832,14 +832,14 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 GetBlockValue(int nHeight, int64 nFees) {
 
-    int64 nSubsidy = 50 * COIN;
-    // 25 PXC per block between the 3rd and 4th hard fork
-    // 25 PXC per block before the 1st testnet hard fork
+    int64 nSubsidy = 200 * COIN;
+    // 25 RODENT per block between the 3rd and 4th hard fork
+    // 25 RODENT per block before the 1st testnet hard fork
     if(((nHeight >= nForkThree) && (nHeight < nForkFour)) || (fTestNet && (nHeight < nTestnetForkOne)))
-      nSubsidy = 25 * COIN;
+      nSubsidy = 100 * COIN;
 
     // Block reward halves every 1M blocks (~2.85 years)
-    nSubsidy >>= (nHeight / 1000000);
+    nSubsidy >>= (nHeight / 500000);
 
     return nSubsidy + nFees;
 }
@@ -1245,7 +1245,7 @@ bool CTransaction::ConnectInputs(MapPrevTx inputs,
 {
     // Take over previous transactions' spent pointers
     // fBlock is true when this is called from AcceptBlock when a new best-block is added to the blockchain
-    // fMiner is true when called from the internal Phoenixcoin miner
+    // fMiner is true when called from the internal Rodentcoin miner
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())
     {
@@ -1403,13 +1403,13 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex)
     // This rule applies to all blocks whose timestamp is after October 1, 2012, 0:00 UTC.
 //    int64 nBIP30SwitchTime = 1349049600;
 //    bool fEnforceBIP30 = (pindex->nTime > nBIP30SwitchTime);
-    /* always active for Phoenixcoin */
+    /* always active for Rodentcoin */
     bool fEnforceBIP30 = true;
 
     // BIP16 didn't become active until October 1 2012
 //    int64 nBIP16SwitchTime = 1349049600;
 //    bool fStrictPayToScriptHash = (pindex->nTime >= nBIP16SwitchTime);
-    /* always active for Phoenixcoin */
+    /* always active for Rodentcoin */
     bool fStrictPayToScriptHash = true;
 
     //// issue here: it doesn't know the version
@@ -1964,7 +1964,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
 
         // Here was some code to verify block difficulty upon block and checkpoint
         // time difference which had never worked well in general and was broken
-        // across the hard forks for Phoenixcoin in particular
+        // across the hard forks for Rodentcoin in particular
 
     }
 
@@ -2033,7 +2033,7 @@ bool CheckDiskSpace(uint64 nAdditionalBytes)
         string strMessage = _("Warning: Disk space is low");
         strMiscWarning = strMessage;
         printf("*** %s\n", strMessage.c_str());
-        uiInterface.ThreadSafeMessageBox(strMessage, "Phoenixcoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
+        uiInterface.ThreadSafeMessageBox(strMessage, "Rodentcoin", CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION | CClientUIInterface::MODAL);
         StartShutdown();
         return false;
     }
@@ -2116,7 +2116,7 @@ bool LoadBlockIndex(bool fAllowNew) {
 
         if(!fTestNet) {
 
-            // The Phoenixcoin genesis block:
+            // The Rodentcoin genesis block:
             // CBlock(hash=be2f30f9e8db8f430056, PoW=00000e9c6e417d3d8068, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=ff2aa75842, nTime=1317972665, nBits=1e0ffff0, nNonce=2084931085, vtx=1)
             //  CTransaction(hash=ff2aa75842, ver=1, vin.size=1, vout.size=1, nLockTime=0)
             //    CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d010446552e532e204973205765696768696e672057696465204f7665726861756c206f662057697265746170204c617773202d204e592054696d6573202d204d617920382032303133)
@@ -2139,7 +2139,7 @@ bool LoadBlockIndex(bool fAllowNew) {
 
         } else {
 
-            // The Phoenixcoin testnet genesis block:
+            // The Rodentcoin testnet genesis block:
             // CBlock(hash=ecd47eee16536f7d03d6, PoW=000004b4022863f9ecf0, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=9bf4ade403, nTime=1383768000, nBits=1e0ffff0, nNonce=1029893, vtx=1)
             //  CTransaction(hash=9bf4ade403, ver=1, vin.size=1, vout.size=1, nLockTime=0)
             //    CTxIn(COutPoint(0000000000, -1), coinbase 04ffff001d01044a57656220466f756e6465722044656e6f756e636573204e534120456e6372797074696f6e20437261636b696e67202d2054686520477561726469616e202d2030362f4e6f762f32303133)
@@ -2588,7 +2588,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         uint64 nNonce = 1;
         vRecv >> pfrom->nVersion >> pfrom->nServices >> nTime >> addrMe;
 
-        // Do not connect to these clients as they're not Phoenixcoin ones or too old
+        // Do not connect to these clients as they're not Rodentcoin ones or too old
         if((pfrom->nVersion > MAX_PROTOCOL_VERSION) || (pfrom->nVersion < MIN_PROTOCOL_VERSION)) {
             printf("peer %s reports incompatible version %i; disconnecting\n", pfrom->addr.ToString().c_str(), pfrom->nVersion);
             pfrom->fDisconnect = true;
@@ -3581,7 +3581,7 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// PhoenixcoinMiner
+// RodentcoinMiner
 //
 
 static const unsigned int pSHA256InitState[8] =
@@ -3733,7 +3733,7 @@ CBlock* CreateNewBlock(CReserveKey& reservekey) {
                 continue;
 
             // Transaction fee required depends on block size
-            // Phoenixcoin: low priority transactions up to 500 bytes in size
+            // Rodentcoin: low priority transactions up to 500 bytes in size
             // are free unless they get caught by the dust spam filter
             bool fAllowFree = ((nBlockSize + nTxSize < 1500) || CTransaction::AllowFree(dPriority));
             int64 nMinFee = tx.GetMinFee(nTxSize, fAllowFree, GMF_BLOCK);
@@ -3866,7 +3866,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey) {
       return(false);
 
     //// debug print
-    printf("PhoenixcoinMiner:\n");
+    printf("RodentcoinMiner:\n");
     printf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -3875,7 +3875,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey) {
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("PhoenixcoinMiner : generated block is stale");
+            return error("RodentcoinMiner : generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -3888,20 +3888,20 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey) {
 
         // Process this block the same as if we had received it from another node
         if (!ProcessBlock(NULL, pblock))
-            return error("PhoenixcoinMiner : ProcessBlock, block not accepted");
+            return error("RodentcoinMiner : ProcessBlock, block not accepted");
     }
 
     return true;
 }
 
-void static ThreadPhoenixcoinMiner(void* parg);
+void static ThreadRodentcoinMiner(void* parg);
 
 static bool fLimitProcessors = false;
 static int nLimitProcessors = -1;
 
-void static PhoenixcoinMiner(CWallet *pwallet)
+void static RodentcoinMiner(CWallet *pwallet)
 {
-    printf("PhoenixcoinMiner started\n");
+    printf("RodentcoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
@@ -3938,7 +3938,7 @@ void static PhoenixcoinMiner(CWallet *pwallet)
 
         IncrementExtraNonce(pblock.get(), pindexPrev, nExtraNonce);
 
-        printf("Running PhoenixcoinMiner with %d transactions in block\n", pblock->vtx.size());
+        printf("Running RodentcoinMiner with %d transactions in block\n", pblock->vtx.size());
 
         //
         // Search
@@ -4022,26 +4022,26 @@ void static PhoenixcoinMiner(CWallet *pwallet)
     }
 }
 
-void static ThreadPhoenixcoinMiner(void* parg)
+void static ThreadRodentcoinMiner(void* parg)
 {
     CWallet* pwallet = (CWallet*)parg;
     try
     {
         vnThreadsRunning[THREAD_MINER]++;
-        PhoenixcoinMiner(pwallet);
+        RodentcoinMiner(pwallet);
         vnThreadsRunning[THREAD_MINER]--;
     }
     catch (std::exception& e) {
         vnThreadsRunning[THREAD_MINER]--;
-        PrintException(&e, "ThreadPhoenixcoinMiner()");
+        PrintException(&e, "ThreadRodentcoinMiner()");
     } catch (...) {
         vnThreadsRunning[THREAD_MINER]--;
-        PrintException(NULL, "ThreadPhoenixcoinMiner()");
+        PrintException(NULL, "ThreadRodentcoinMiner()");
     }
     nHPSTimerStart = 0;
     if (vnThreadsRunning[THREAD_MINER] == 0)
         dHashesPerSec = 0;
-    printf("ThreadPhoenixcoinMiner exiting, %d threads remaining\n", vnThreadsRunning[THREAD_MINER]);
+    printf("ThreadRodentcoinMiner exiting, %d threads remaining\n", vnThreadsRunning[THREAD_MINER]);
 }
 
 
@@ -4062,11 +4062,11 @@ void GenerateCoins(bool fGenerate, CWallet* pwallet)
         if (fLimitProcessors && nProcessors > nLimitProcessors)
             nProcessors = nLimitProcessors;
         int nAddThreads = nProcessors - vnThreadsRunning[THREAD_MINER];
-        printf("Starting %d PhoenixcoinMiner threads\n", nAddThreads);
+        printf("Starting %d RodentcoinMiner threads\n", nAddThreads);
         for (int i = 0; i < nAddThreads; i++)
         {
-            if (!CreateThread(ThreadPhoenixcoinMiner, pwallet))
-                printf("Error: CreateThread(ThreadPhoenixcoinMiner) failed\n");
+            if (!CreateThread(ThreadRodentcoinMiner, pwallet))
+                printf("Error: CreateThread(ThreadRodentcoinMiner) failed\n");
             Sleep(10);
         }
     }

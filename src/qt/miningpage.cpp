@@ -219,7 +219,7 @@ void MiningPage::minerError(QProcess::ProcessError error)
 {
     if (error == QProcess::FailedToStart)
     {
-        reportToList("Miner failed to start. Make sure you have the minerd executable in the same directory as Phoenixcoin-Qt.", ERROR, NULL);
+        reportToList("Miner failed to start. Make sure you have the minerd executable in the same directory as Rodentcoin-Qt.", ERROR, NULL);
     }
 }
 

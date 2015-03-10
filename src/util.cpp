@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
-// Copyright (c) 2013-2014 Phoenixcoin Developers
+// Copyright (c) 2013-2014 Rodentcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file LICENCE or http://www.opensource.org/licenses/mit-license.php
 
@@ -942,7 +942,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "phoenixcoin";
+    const char* pszModule = "rodentcoin";
 #endif
     if (pex)
         return strprintf(
@@ -983,12 +983,12 @@ boost::filesystem::path GetDefaultDataDir() {
     /* Windows: current directory \ data for livenet */
     path = boost::filesystem::current_path() / "data";
 #else
-    /* Linux, Mac OS X, *BSD and so on: ~/.phoenixcoin */
+    /* Linux, Mac OS X, *BSD and so on: ~/.rodentcoin */
     char* pszHome = getenv("HOME");
     if((pszHome == NULL) || (strlen(pszHome) == 0))
-      path = fs::path("/.phoenixcoin");
+      path = fs::path("/.rodentcoin");
     else
-      path = fs::path(pszHome) / ".phoenixcoin";
+      path = fs::path(pszHome) / ".rodentcoin";
 #endif
 
     return(path);
@@ -1034,7 +1034,7 @@ boost::filesystem::path GetConfigFile() {
     fs::path pathConfigFile;
 
     if(mapArgs.count("-conf")) pathConfigFile = fs::path(mapArgs["-conf"]);
-    else pathConfigFile = fs::path("phoenixcoin.conf");
+    else pathConfigFile = fs::path("rodentcoin.conf");
 
     if(!pathConfigFile.is_absolute())
       pathConfigFile = GetDataDir(false) / pathConfigFile;
@@ -1045,14 +1045,14 @@ boost::filesystem::path GetConfigFile() {
 void ReadConfigFile(map<string, string>& mapSettingsRet, map<string, vector<string> >& mapMultiSettingsRet) {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good())
-        return; // No phoenixcoin.conf file is OK
+        return; // No rodentcoin.conf file is OK
 
     set<string> setOptions;
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-        // Don't overwrite existing settings so command line settings override phoenixcoin.conf
+        // Don't overwrite existing settings so command line settings override rodentcoin.conf
         string strKey = string("-") + it->string_key;
         if (mapSettingsRet.count(strKey) == 0)
         {
@@ -1066,7 +1066,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet, map<string, vector<stri
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "phoenixcoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "rodentcoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1227,10 +1227,10 @@ void AddTimeData(const CNetAddr& ip, int64 nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Phoenixcoin will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct.  If your clock is wrong Rodentcoin will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("Phoenixcoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("Rodentcoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
                 }
             }
         }

@@ -331,7 +331,7 @@ Are you sure you wish to encrypt your wallet?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send coins to a Phoenixcoin address</source>
+        <source>Send coins to a Rodentcoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -879,7 +879,7 @@ Address: %4
 <context>
     <name>RPCConsole</name>
     <message>
-        <source>Phoenixcoin - RPC Console</source>
+        <source>Rodentcoin - RPC Console</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -975,7 +975,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Welcome to the Phoenixcoin RPC console.</source>
+        <source>Welcome to the Rodentcoin RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1673,11 +1673,11 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Specify configuration file (default: phoenixcoin.conf)</source>
+        <source>Specify configuration file (default: rodentcoin.conf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Specify pid file (default: phoenixcoind.pid)</source>
+        <source>Specify pid file (default: rodentcoind.pid)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2057,7 +2057,7 @@ SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
         <source>%s, you must set up the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=phoenixcoinrpc
+rpcuser=rodentcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 If the file does not exist, create it with owner-readable-only file permissions.

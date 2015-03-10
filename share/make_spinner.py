@@ -7,7 +7,7 @@ from os import path
 from PIL import Image
 from subprocess import Popen
 
-# The source icon is copyright (c) 2014 John Doering <ghostlander@phoenixcoin.org>
+# The source icon is copyright (c) 2014 John Doering <ghostlander@rodentcoin.org>
 # under the terms of the MIT Licence (see ../LICENCE)
 SRC='images/reload.png'
 TMPDIR='../src/qt/res/movies/'

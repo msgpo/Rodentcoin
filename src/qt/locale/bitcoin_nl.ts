@@ -414,7 +414,7 @@ Bent u er zeker van uw dat u uw portemonnee wilt versleutelen?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="210"/>
-        <source>Send coins to a Phoenixcoin address</source>
+        <source>Send coins to a Rodentcoin address</source>
         <translation>Verstuur munten naar een Bitcoinadres</translation>
     </message>
     <message>
@@ -1124,7 +1124,7 @@ Adres: %4
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Phoenixcoin - RPC Console</source>
+        <source>Rodentcoin - RPC Console</source>
         <translation>Bitcoin debugscherm</translation>
     </message>
     <message>
@@ -1232,8 +1232,8 @@ Adres: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="212"/>
-        <source>Welcome to the Phoenixcoin RPC console.</source>
-        <translation>Welkom bij de Phoenixcoin RPC-console.</translation>
+        <source>Welcome to the Rodentcoin RPC console.</source>
+        <translation>Welkom bij de Rodentcoin RPC-console.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="213"/>
@@ -2009,14 +2009,14 @@ Adres: %4
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="50"/>
-        <source>Specify configuration file (default: phoenixcoin.conf)</source>
-        <translation>Specifieer configuratiebestand (standaard: phoenixcoin.conf)
+        <source>Specify configuration file (default: rodentcoin.conf)</source>
+        <translation>Specifieer configuratiebestand (standaard: rodentcoin.conf)
 </translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="51"/>
-        <source>Specify pid file (default: phoenixcoind.pid)</source>
-        <translation>Specifieer pid-bestand (standaard: phoenixcoind.pid)
+        <source>Specify pid file (default: rodentcoind.pid)</source>
+        <translation>Specifieer pid-bestand (standaard: rodentcoind.pid)
 </translation>
     </message>
     <message>
@@ -2504,7 +2504,7 @@ SSL-opties: (zie de Bitcoin wiki voor SSL-instructies)</translation>
         <source>%s, you must set up the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=phoenixcoinrpc
+rpcuser=rodentcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 If the file does not exist, create it with owner-readable-only file permissions.
@@ -2512,7 +2512,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
         <translation>%s, je moet de configuratie bestand te instellen:
  %s
 Het is aangeraden het volgende willekeurig wachtwoord te gebruiken:
-rpccuser=phoenixcoinrpc
+rpccuser=rodentcoinrpc
 rpcpassword=%s
 (het is niet nodig om het wachtwoord te onthouden)
 Als het bestand niet bestaat, maak het aan, met een alleen-lezen permissie.

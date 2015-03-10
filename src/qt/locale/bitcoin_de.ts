@@ -412,8 +412,8 @@ Are you sure you wish to encrypt your wallet?</source>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="210"/>
-        <source>Send coins to a Phoenixcoin address</source>
-        <translation>Bitcoins an eine Phoenixcoin-Adresse überweisen</translation>
+        <source>Send coins to a Rodentcoin address</source>
+        <translation>Bitcoins an eine Rodentcoin-Adresse überweisen</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="246"/>
@@ -1120,8 +1120,8 @@ Adresse: %4</translation>
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Phoenixcoin - RPC Console</source>
-        <translation>Phoenixcoin - RPC Konsole</translation>
+        <source>Rodentcoin - RPC Console</source>
+        <translation>Rodentcoin - RPC Konsole</translation>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="46"/>
@@ -1228,8 +1228,8 @@ Adresse: %4</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="212"/>
-        <source>Welcome to the Phoenixcoin RPC console.</source>
-        <translation>Willkommen in der Phoenixcoin RPC-Konsole.</translation>
+        <source>Welcome to the Rodentcoin RPC console.</source>
+        <translation>Willkommen in der Rodentcoin RPC-Konsole.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="213"/>
@@ -2001,13 +2001,13 @@ Adresse: %4</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="50"/>
-        <source>Specify configuration file (default: phoenixcoin.conf)</source>
-        <translation>Konfigurationsdatei angeben (Standard: phoenixcoin.conf)</translation>
+        <source>Specify configuration file (default: rodentcoin.conf)</source>
+        <translation>Konfigurationsdatei angeben (Standard: rodentcoin.conf)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="51"/>
-        <source>Specify pid file (default: phoenixcoind.pid)</source>
-        <translation>PID-Datei angeben (Standard: phoenixcoind.pid)</translation>
+        <source>Specify pid file (default: rodentcoind.pid)</source>
+        <translation>PID-Datei angeben (Standard: rodentcoind.pid)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="52"/>
@@ -2484,7 +2484,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
         <translation>%s, Sie müssen die Konfigurationsdatei zu erstellen:
  %s
 Es wird empfohlen das folgende Zufallspasswort zu verwenden:
-rpcuser=phoenixcoinrpc
+rpcuser=rodentcoinrpc
 rpcpassword=%s
 (Sie müssen sich dieses Passwort nicht merken!)
 Falls die Konfigurationsdatei nicht existiert, erzeugen Sie diese bitte mit Leserechten nur für den Dateibesitzer.

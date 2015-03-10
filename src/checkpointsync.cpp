@@ -1,18 +1,18 @@
 // Copyright (c) 2012-2013 PPCoin developers
 // Copyright (c) 2013 Primecoin developers
-// Copyright (c) 2014 Phoenixcoin Developers
+// Copyright (c) 2014 Rodentcoin Developers
 //
 // A perpetual use license of this advanced checkpoint technology is granted
-// to Phoenixcoin by Sunny King on behalf of PPCoin developers and Primecoin
+// to Rodentcoin by Sunny King on behalf of PPCoin developers and Primecoin
 // developers.
 //
 // Permission is hereby granted to any person obtaining a copy of the advanced
-// checkpoint technology, for perpetual use in Phoenixcoin network, including
+// checkpoint technology, for perpetual use in Rodentcoin network, including
 // the rights to use, copy, modify, merge, publish, distribute, subject to the
 // following conditions:
 //
 // a) This license is not transferrable, no sublicense, and applies to
-//    Phoenixcoin only.
+//    Rodentcoin only.
 // b) The above copyright notice and this permission notice shall be included
 //    in all copies of source code distributions.
 //

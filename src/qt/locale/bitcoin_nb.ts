@@ -413,7 +413,7 @@ Er du sikker på at du vil kryptere lommeboken?</translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="210"/>
-        <source>Send coins to a Phoenixcoin address</source>
+        <source>Send coins to a Rodentcoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1123,7 +1123,7 @@ Adresse: %4
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Phoenixcoin - RPC Console</source>
+        <source>Rodentcoin - RPC Console</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1231,7 +1231,7 @@ Adresse: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="212"/>
-        <source>Welcome to the Phoenixcoin RPC console.</source>
+        <source>Welcome to the Rodentcoin RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2004,13 +2004,13 @@ Adresse: %4
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="50"/>
-        <source>Specify configuration file (default: phoenixcoin.conf)</source>
-        <translation>Angi konfigurasjonsfil (standardverdi: phoenixcoin.conf)</translation>
+        <source>Specify configuration file (default: rodentcoin.conf)</source>
+        <translation>Angi konfigurasjonsfil (standardverdi: rodentcoin.conf)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="51"/>
-        <source>Specify pid file (default: phoenixcoind.pid)</source>
-        <translation>Angi pid-fil (standardverdi: phoenixcoind.pid)</translation>
+        <source>Specify pid file (default: rodentcoind.pid)</source>
+        <translation>Angi pid-fil (standardverdi: rodentcoind.pid)</translation>
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="52"/>
@@ -2479,7 +2479,7 @@ SSL innstillinger: (se Bitcoin Wiki for instruksjoner om SSL oppsett)</translati
         <source>%s, you must set up the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=phoenixcoinrpc
+rpcuser=rodentcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 If the file does not exist, create it with owner-readable-only file permissions.
@@ -2487,7 +2487,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
         <translation>%s, du må sette konfigurasjonsfilen:
  %s
 Det anbefales at du bruker følgende tilfeldige passord:
-rpcuser=phoenixcoinrpc
+rpcuser=rodentcoinrpc
 rpcpassword=%s
 (du trenger ikke huske dette passordet)
 Hvis filen ikke finnes, opprett den med leserettighet kun for eier av filen.

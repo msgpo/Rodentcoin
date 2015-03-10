@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2011-2012 Litecoin Developers
-// Copyright (c) 2013-2014 Phoenixcoin Developers
+// Copyright (c) 2013-2014 Rodentcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file LICENCE or http://www.opensource.org/licenses/mit-license.php
 
@@ -294,15 +294,15 @@ void ThreadIRCSeed2(void* parg)
         }
         
         if (fTestNet) {
-            Send(hSocket, "JOIN #phoenixcoinTEST3\r");
-            Send(hSocket, "WHO #phoenixcoinTEST3\r");
+            Send(hSocket, "JOIN #rodentcoinTEST3\r");
+            Send(hSocket, "WHO #rodentcoinTEST3\r");
         } else {
-            // randomly join #phoenixcoin00-#phoenixcoin09
+            // randomly join #rodentcoin00-#rodentcoin09
             // int channel_number = GetRandInt(10);
             // use one channel for now
             int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #phoenixcoin%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #phoenixcoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #rodentcoin%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #rodentcoin%02d\r", channel_number).c_str());
         }
 
         int64 nStart = GetTime();

@@ -34,16 +34,16 @@ QString BitcoinUnits::name(int unit)
 {
     if(!fTestNet) {
         switch(unit) {
-          case BTC: return QString("PXC");
-          case mBTC: return QString("mPXC");
-          case uBTC: return QString::fromUtf8("μPXC");
+          case BTC: return QString("RODENT");
+          case mBTC: return QString("mRODENT");
+          case uBTC: return QString::fromUtf8("μRODENT");
           default: return QString("???");
         }
     } else {
         switch(unit) {
-          case BTC: return QString("PXCt");
-          case mBTC: return QString("mPXCt");
-          case uBTC: return QString::fromUtf8("μPXCt");
+          case BTC: return QString("RODENTt");
+          case mBTC: return QString("mRODENTt");
+          case uBTC: return QString::fromUtf8("μRODENTt");
           default: return QString("???");
         }
     }
@@ -53,9 +53,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Phoenixcoins");
-    case mBTC: return QString("Milli-Phoenixcoins (1 / 1,000)");
-    case uBTC: return QString("Micro-Phoenixcoins (1 / 1,000,000)");
+    case BTC: return QString("Rodentcoins");
+    case mBTC: return QString("Buckdoes (1 / 1,000)");
+    case uBTC: return QString("Kittens (1 / 1,000,000)");
     default: return QString("???");
     }
 }

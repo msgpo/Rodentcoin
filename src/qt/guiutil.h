@@ -16,7 +16,7 @@ class QUrl;
 class QAbstractItemView;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Phoenixcoin Qt UI.
+/** Utility functions used by the Rodentcoin Qt UI.
  */
 namespace GUIUtil
 {
@@ -24,14 +24,14 @@ namespace GUIUtil
     QString dateTimeStr(const QDateTime &datetime);
     QString dateTimeStr(qint64 nTime);
 
-    // Render Phoenixcoin addresses in monospace font
+    // Render Rodentcoin addresses in monospace font
     QFont bitcoinAddressFont();
 
     // Set up widgets for address and amounts
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "phoenixcoin:" URI into recipient object, return true on succesful parsing
+    // Parse "rodentcoin:" URI into recipient object, return true on succesful parsing
     // See Bitcoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);
@@ -98,7 +98,7 @@ namespace GUIUtil
     bool GetStartOnSystemStartup();
     bool SetStartOnSystemStartup(bool fAutoStart);
 
-    /** Help message for Phoenixcoin-Qt, shown with --help. */
+    /** Help message for Rodentcoin-Qt, shown with --help. */
     class HelpMessageBox : public QMessageBox
     {
         Q_OBJECT
