@@ -34,7 +34,7 @@ unsigned int nTransactionsUpdated = 0;
 int nBaseMaturity = BASE_MATURITY;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xbe2f30f9e8db8f430056869c43503a992d232b28508e83eda101161a18cf7c73");
+uint256 hashGenesisBlock("0x47645ae19de829801d959cf6a0e25800fd88e4149433c37fe2b7c884f4fda0a9");
 // The lowest possible difficulty which is also the starting difficulty (1 / 2^12)
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20);
 /* The difficulty after switching to NeoScrypt (0.015625) */
@@ -2092,7 +2092,7 @@ bool LoadBlockIndex(bool fAllowNew) {
         pchMessageStartNew[1] = 0xD0;
         pchMessageStartNew[2] = 0xD8;
         pchMessageStartNew[3] = 0xD4;
-        hashGenesisBlock = uint256("0xecd47eee16536f7d03d64643cfc8c61b22093f8bf2c9358bf8b6f4dcb5f13192");
+        hashGenesisBlock = uint256("0xf97211a5ff1d8f34b5a2fb684d9562449f43077cbd42d1fa688c1346fbbcc88d");
         nBaseMaturity = BASE_MATURITY_TESTNET;
     }
 
@@ -2123,19 +2123,19 @@ bool LoadBlockIndex(bool fAllowNew) {
             //    CTxOut(error)
             //  vMerkleTree: ff2aa75842
 
-            const char* pszTimestamp = "U.S. Is Weighing Wide Overhaul of Wiretap Laws - NY Times - May 8 2013";
+            const char* pszTimestamp = "Sunday, 8 March 2015 - The Spoof - Country from Eastern Hemisphere dubbed showbiz capital";
             txNew.vin.resize(1);
             txNew.vout.resize(1);
             txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-            txNew.vout[0].nValue = 50 * COIN;
+            txNew.vout[0].nValue = 200 * COIN;
             txNew.vout[0].scriptPubKey = CScript() << 0x00 << OP_CHECKSIG;
             block.vtx.push_back(txNew);
             block.hashPrevBlock = 0;
             block.hashMerkleRoot = block.BuildMerkleTree();
             block.nVersion = 1;
-            block.nTime    = 1317972665;
+            block.nTime    = 1425772800;
             block.nBits    = 0x1e0ffff0;
-            block.nNonce   = 2084931085;
+            block.nNonce   = 1365635;
 
         } else {
 
@@ -2146,7 +2146,7 @@ bool LoadBlockIndex(bool fAllowNew) {
             //    CTxOut(nValue=500.00000000, scriptPubKey=049023f10bccda76f971d6417d420c)
             //  vMerkleTree: 9bf4ade403 
 
-            const char* pszTimestamp = "Web Founder Denounces NSA Encryption Cracking - The Guardian - 06/Nov/2013";
+            const char* pszTimestamp = "Sunday, 8 March 2015 - The Spoof - \"Party disguised as independents\" dominate student council elections";
             txNew.vin.resize(1);
             txNew.vout.resize(1);
             txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2156,9 +2156,9 @@ bool LoadBlockIndex(bool fAllowNew) {
             block.hashPrevBlock = 0;
             block.hashMerkleRoot = block.BuildMerkleTree();
             block.nVersion = 1;
-            block.nTime    = 1383768000;
+            block.nTime    = 1425772800;
             block.nBits    = 0x1e0ffff0;
-            block.nNonce   = 1029893;
+            block.nNonce   = 1040914;
 
         }
 
@@ -2167,8 +2167,8 @@ bool LoadBlockIndex(bool fAllowNew) {
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
 
-        if(!fTestNet) assert(block.hashMerkleRoot == uint256("0xff2aa75842fae1bfb100b656c57229ce37b03643434da2043ddab7a11cfe69a6"));
-        else assert(block.hashMerkleRoot == uint256("0x9bf4ade403d775b44e872935609367aee5bd7df698e0f4c73e5f30f46b30a537"));
+        if(!fTestNet) assert(block.hashMerkleRoot == uint256("0x209dd5d98eec5f2834f574b878a1ecddf9d1ac3400c6ee7805fba305a7f35cf0"));
+        else assert(block.hashMerkleRoot == uint256("0x672514c12cee7b0ffa2e1d768ecc40701d9977730ea2193e4ef5f5b8ca374c6c"));
 
         // If genesis block hash does not match, then generate new genesis hash.
         if (false && block.GetHash() != hashGenesisBlock)
